@@ -2,6 +2,12 @@
 
 由 Codex 开发的开源 Windows 原生额度小窗，查看已登录 ChatGPT 账号的 Codex 剩余额度、恢复时间和可用重置次数。
 
+## 样式预览
+
+<img src="docs/images/widget.png" alt="Codex 额度小窗实际运行截图，展示玻璃背景、剩余额度、恢复倒计时和重置明细" width="360">
+
+Windows 实际运行截图。显示数值随账号和时间变化。
+
 ## Agent 安装流程
 
 以下说明面向执行安装、配置和维护任务的 Agent。
