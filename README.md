@@ -4,9 +4,9 @@
 
 ## 样式预览
 
-<img src="docs/images/widget.png" alt="Codex 额度小窗实际运行截图，展示玻璃背景、剩余额度、恢复倒计时和重置明细" width="360">
+<a href="docs/images/widget-2x.png"><img src="docs/images/widget-2x.png" alt="Codex 额度小窗高清预览，展示玻璃背景、剩余额度、恢复倒计时和重置明细" width="360"></a>
 
-Windows 实际运行截图。显示数值随账号和时间变化。
+Windows 界面以 2× 比例渲染后截图，点击图片查看原图。显示数值随账号和时间变化。
 
 ## Agent 安装流程
 
