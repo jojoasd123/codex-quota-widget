@@ -1,0 +1,27 @@
+name: Build Windows
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust stable
+        run: |
+          rustup toolchain install stable --profile minimal --component rustfmt,clippy
+          rustup default stable
+      - run: cargo fmt --all -- --check
+      - run: cargo test --locked
+      - run: cargo clippy --locked --target x86_64-pc-windows-msvc -- -D warnings
+      - run: cargo build --locked --release
+      - name: Package portable app
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory artifacts
+          Copy-Item target/release/codex-quota-widget.exe artifacts/CodexQuota.exe
+          Copy-Item CodexQuota.ico,README.md,LICENSE,codex-quota.example.json artifacts/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: codex-quota-widget-windows-x64
+          path: artifacts/

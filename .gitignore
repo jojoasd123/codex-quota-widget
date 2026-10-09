@@ -1,0 +1,6 @@
+/target/
+/artifacts/
+/codex-quota.json
+/*.exe
+/*.zip
+/check*.json
