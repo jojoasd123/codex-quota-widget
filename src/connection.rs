@@ -145,7 +145,9 @@ fn decode_wsl_list(bytes: &[u8]) -> Vec<String> {
         || bytes.iter().skip(1).step_by(2).take(16).any(|b| *b == 0)
     {
         let units: Vec<_> = bytes
-            .chunks_exact(2)
+            .as_chunks::<2>()
+            .0
+            .iter()
             .map(|pair| u16::from_le_bytes([pair[0], pair[1]]))
             .collect();
         String::from_utf16_lossy(&units)
